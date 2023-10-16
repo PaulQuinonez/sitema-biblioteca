@@ -10,6 +10,8 @@
 
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="../assets/styles/login.css">
+    <link rel="stylesheet" href="../assets/styles/validations.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.3/dist/sweetalert2.min.css">
          
     <title>Login & Registration Form</title> 
 </head>
@@ -20,17 +22,23 @@
             <div class="form login">
                 <span class="title">Login</span>
 
-                <form id="loginForm">
-                    <div class="input-field">
-                        <input type="text" id="email" placeholder="Enter your email" required>
-                        <i class="uil uil-envelope icon"></i>
-                        <div class="error-message" id="emailError">Email must be valid and not empty</div>
+                <form id="loginForm" class="loginForm">
+                    <div class="input-field formulario__grupo" id="grupo__correo">
+                        <div class="formulario__grupo-input">
+                            <input type="text" id="email" class="formulario__input" name="email" placeholder="Enter your email" >
+                            <i class="uil uil-envelope icon"></i>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                     </div>
-                    <div class="input-field">
-                        <input type="password" class="password" id="password" placeholder="Enter your password" required>
-                        <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
-                        <div class="error-message" id="passwordError">Password must not be empty</div>
+                    <div class="input-field formulario__grupo" id="grupo__password">
+                        <div class="formulario__grupo-input">
+                            <input type="password" class="password formulario__input" name="password" id="password" placeholder="Enter your password" >
+                            <i class="uil uil-lock icon"></i>
+                            <i class="uil uil-eye-slash showHidePw"></i>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
                     </div>
 
                     <div class="checkbox-text">
@@ -49,5 +57,6 @@
     </div>
 
      <script src="../assets/js/login.js"></script> 
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.3/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>

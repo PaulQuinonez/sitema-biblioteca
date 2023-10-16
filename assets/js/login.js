@@ -30,46 +30,40 @@ loginForm.addEventListener("submit", (e) => {
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    const emailError = document.getElementById("emailError");
-    const passwordError = document.getElementById("passwordError");
 
-    // Ocultar los mensajes de error iniciales
-    emailError.style.display = "none";
-    passwordError.style.display = "none";
-
-    // Validar el email
-    if (!email) {
-        emailError.style.display = "block";
-    } else if (!validateEmail(email)) {
-        emailError.style.display = "block";
-        emailError.textContent = "Email must be valid";
-    }
-
-    // Validar la contraseña
-    if (!password) {
-        passwordError.style.display = "block";
-    } else if (password !== "123456") {
-        passwordError.style.display = "block";
-        passwordError.textContent = "Password is incorrect";
-    }
-
-    // Si no hay errores, redirigir al usuario
-    if (!emailError.style.display && !passwordError.style.display) {
-        window.location.href = "dashboard.html";
+    if (!email || !password) {
+        Swal.fire({
+            title: 'Error',
+            text: 'Ambos campos son obligatorios',
+            icon: 'error',
+            position: 'top-end', // Posición en la parte superior derecha
+            toast: true, // Mostrar como toast
+            showConfirmButton: false, // No mostrar botón de confirmación
+            timer: 3000, // Duración en milisegundos
+        });
+    } else if (email === "admin@test.com" && password === "123456") {
+        Swal.fire({
+            title: 'Éxito',
+            text: 'Tus credenciales son correctas',
+            icon: 'success',
+            position: 'top-end',
+            toast: true,
+            showConfirmButton: false,
+            timer: 3000,
+        }).then(() => {
+            window.location.href = 'dashboard.html';
+        });
+    } else {
+        Swal.fire({
+            title: 'Error',
+            text: 'Tus credenciales son incorrectas',
+            icon: 'error',
+            position: 'top-end',
+            toast: true,
+            showConfirmButton: false,
+            timer: 3000,
+        });
     }
 });
 
-// Función para validar un email
-function validateEmail(email) {
-    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return regex.test(email);
-}
 
-// js code to aparecer signup y login form
-signUp.addEventListener("click", () => {
-    container.classList.add("active");
-});
-
-login.addEventListener("click", () => {
-    container.classList.remove("active");
-});
