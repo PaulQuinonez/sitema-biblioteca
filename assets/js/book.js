@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let error = false;
 
-        if (!titulo || titulo || autor || editorial || fecha) {
+        if (!titulo || !titulo || !autor || !editorial || !fecha) {
             Swal.fire({
                 title: 'Error',
                 text: 'Por favor, complete todos los campos',
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 timer: 3000,
             }).then(() => {
                 // Redirige al usuario o realiza otra acción después de 3 segundos
-                window.location.href = 'users.html';
+                window.location.href = 'books.html';
             });
         }
     });
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let error = false;
 
-        if (!titulo || titulo || autor || editorial || fecha) {
+        if (!titulo || !titulo || !autor || !editorial || !fecha) {
             Swal.fire({
                 title: 'Error',
                 text: 'Por favor, complete todos los campos',

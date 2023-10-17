@@ -17,7 +17,7 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
- 
+	   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.3/dist/sweetalert2.all.min.js"></script>
  
     <!--google material icon-->
      <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
@@ -71,7 +71,7 @@
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Usuarios</span>
+        <span class="dashboard">Alquiler</span>
       </div>
       <div class="profile-details">
         <img src="../assets/img/hombre.png" alt="">
@@ -234,28 +234,30 @@
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<div class="modal-body">
-									<div class="form-group">
-										<label>Estudiante</label>
-										<input type="text" class="form-control" required>
+								<form id="registroForm" action="">
+									<div class="modal-body">
+										<div class="form-group">
+											<label>Estudiante</label>
+											<input name="estudiante" type="text" class="form-control">
+										</div>
+										<div class="form-group">
+											<label>Libro</label>
+											<input name="libro" type="text" class="form-control">
+										</div>
+										<div class="form-group">
+											<label>Fecha de Alquiler</label>
+											<input name="fecha_alquiler"  type="date" class="form-control">
+										</div>
+										<div class="form-group">
+											<label>Fecha de Devolución</label>
+											<input name="fecha_devolucion" type="date" class="form-control">
+										</div>
 									</div>
-									<div class="form-group">
-										<label>Libro</label>
-										<input type="email" class="form-control" required>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+										<button type="submit" class="btn btn-success">Alquilar</button>
 									</div>
-									<div class="form-group">
-										<label>Fecha de Alquiler</label>
-										<input type="date" class="form-control" required>
-									</div>
-									<div class="form-group">
-										<label>Fecha de Devolución</label>
-										<input type="date" class="form-control" required>
-									</div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-									<button type="button" class="btn btn-success">Alquilar</button>
-								</div>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -268,28 +270,30 @@
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<div class="modal-body">
-									<div class="form-group">
-										<label>Estudiante</label>
-										<input type="text" class="form-control" required>
+								<form id="registroFormEdit" action="">
+									<div class="modal-body">
+										<div class="form-group">
+											<label>Estudiante</label>
+											<input name="estudiante" type="text" class="form-control">
+										</div>
+										<div class="form-group">
+											<label>Libro</label>
+											<input name="libro" type="text" class="form-control">
+										</div>
+										<div class="form-group">
+											<label>Fecha de Alquiler</label>
+											<input name="fecha_alquiler"  type="date" class="form-control">
+										</div>
+										<div class="form-group">
+											<label>Fecha de Devolución</label>
+											<input name="fecha_devolucion" type="date" class="form-control">
+										</div>
 									</div>
-									<div class="form-group">
-										<label>Libro</label>
-										<input type="email" class="form-control" required>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+										<button type="submit" class="btn btn-success">Guardar</button>
 									</div>
-									<div class="form-group">
-										<label>Fecha de Alquiler</label>
-										<input type="date" class="form-control" required>
-									</div>
-									<div class="form-group">
-										<label>Fecha de Devolución</label>
-										<input type="date" class="form-control" required>
-									</div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-									<button type="button" class="btn btn-success">Guardar</button>
-								</div>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -324,7 +328,7 @@
    <script src="../assets/js/popper.min.js"></script>
    <script src="../assets/js/bootstrap.min.js"></script>
    <script src="../assets/js/jquery-3.3.1.min.js"></script>
-   <script src="../assets/js/users.js"></script>
+   <script src="../assets/js/alquiler.js"></script>
 
 </body>
 </html>
